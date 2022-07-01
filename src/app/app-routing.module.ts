@@ -8,14 +8,14 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m=>m.LoginPageModule)
   },
-  {
-    path: 'registration',
-    loadChildren: () => import('./registration/ServiceWorkerRegistration.module').then(m=> m.RegistrationPageModule)
-  },
-  {
-    path: 'forgot-password',
-    loadChildren: () => import('./forgot-password/forgot-password.module')then(m=> m.ForgotPasswordPageModule)
-  },
+ // {
+   // path: 'registration',
+   // loadChildren: () => import('./registration/ServiceWorkerRegistration.module').then(m=> m.RegistrationPageModule)
+  //},
+  //{
+   // path: 'forgot-password',
+    //loadChildren: () => import('./forgot-password/forgot-password.module')then(m=> m.ForgotPasswordPageModule)
+  //},
 ];
 
 @NgModule({
