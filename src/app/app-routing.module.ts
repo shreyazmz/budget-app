@@ -8,20 +8,20 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m=>m.LoginPageModule)
   },
- // {
-   // path: 'registration',
-   // loadChildren: () => import('./registration/ServiceWorkerRegistration.module').then(m=> m.RegistrationPageModule)
-  //},
+ {
+   path: 'registration',
+   loadChildren: () => import('./registration/Registration.module').then(m=> m.RegistrationPageModule)
+},
   //{
-   // path: 'forgot-password',
-    //loadChildren: () => import('./forgot-password/forgot-password.module')then(m=> m.ForgotPasswordPageModule)
+   // path: 'forgot-password', 
+    //loadChildren: () => import('./forgot-password.module')then(m=> m.ForgotPasswordPageModule)
   //},
 ];
 
-@NgModule({
+@NgModule({ 
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule]
+  exports: [RouterModule] 
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {} 
