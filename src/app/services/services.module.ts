@@ -6,6 +6,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 
+export class Webapiservice{
+  mainturl:string=" Staging2.hpgamechanger.in/api/abc/"
+}
 
 
 import { ServicesPageRoutingModule } from './services-routing.module';
