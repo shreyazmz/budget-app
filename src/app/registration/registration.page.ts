@@ -19,6 +19,13 @@ export class RegistrationPage implements OnInit {
       this.router.navigate([' ']);
       return;
     }
+    let regis={
+      "Phone": localStorage.getItem("mobile"),
+      "code":1,
+    };
+    this.getRegistration 
+
+    }
 
   }
 
