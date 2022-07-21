@@ -11,7 +11,16 @@ import {finalize} from 'rxjs/operators';
 })
 export class RegistrationPage implements OnInit {
 
-  constructor(private webapiService: WebapiService) { }
+  constructor(private webapiService: WebapiService,private router: Router,public loadingController:LoadingController: LoadingController,public alertController: AlertController) { }
+  public notilist: any;
+  ngOnInit(){
+    if(localStorage.getItem("data")===null||localStorage.getItem("data")===undefined)
+    {
+      this.router.navigate([' ']);
+      return;
+    }
+
+  }
 
   ngOnInit() {
   }
