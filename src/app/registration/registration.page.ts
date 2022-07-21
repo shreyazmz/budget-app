@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WebapiService } from '../api/webapi.service';
+
 
 @Component({
   selector: 'app-registration',
