@@ -23,8 +23,8 @@ export class RegistrationPage implements OnInit {
       "Phone": localStorage.getItem("mobile"),
       "code":1,
     };
-    this.getRegistration 
-
+    this.getRegistration(reg)
+    
     }
 
   }
