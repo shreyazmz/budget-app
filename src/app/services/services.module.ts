@@ -1,8 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+@Injectable({
+  providedIn: 'root'
+})
 
-import { IonicModule } from '@ionic/angular';
+
 
 import { ServicesPageRoutingModule } from './services-routing.module';
 
