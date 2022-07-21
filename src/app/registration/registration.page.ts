@@ -24,8 +24,8 @@ export class RegistrationPage implements OnInit {
       "code":1,
     };
     this.getRegistration(reg)
-    
     }
+    async
 
   }
 
