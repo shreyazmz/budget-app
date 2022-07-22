@@ -48,12 +48,21 @@ if(this.password===""){
   this.showAlert("Please enter password");
   return false;      
   }
+  
   debugger;
   var check=this.validateEmail(this.email)
   if(check===false){
     this.showAlert("Please enter valid email id ");
     return false;      
   
+  }
+  if(this.address===""){
+    this.showAlert("Address field cannot be empty");
+    return false;    
+  }
+  if(this.city===""){
+    this.showAlert("City field cannot be empty");
+    return false;    
   }
   if(this.mobile===""){
     this.showAlert("Please enter mobile no");
