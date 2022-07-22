@@ -9,7 +9,7 @@ import {finalize} from 'rxjs/operators';
   templateUrl: './registration.page.html',
   styleUrls: ['./registration.page.scss'],
 })
-export class RegistrationPage implements OnInit {
+export class RegistrationPage implements OnInit { 
 public name:any;
   address: any;
   email: any;
@@ -17,7 +17,7 @@ public name:any;
   city:any;
   mobile:any;
 
-  constructor(private webapiService: WebapiService,private router: Router,public loadingController:LoadingController: LoadingController,public alertController: AlertController) { }
+  constructor(private webapiService: WebapiService,private router: Router,public loadingController:LoadingController,LoadingController:LoadingController, public alertController: AlertController) { }
   public notilist: any;
   ngOnInit(){
    
@@ -35,7 +35,7 @@ public name:any;
   this.registration(data)  
   }
 
-  registration(data){
+  async registration(data){
     const loading =await  this.loadingController.create({
       cssClass:"custom-alertDanger1",
       message: 'Please Wait....',
