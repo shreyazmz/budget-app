@@ -11,17 +11,26 @@ import {finalize} from 'rxjs/operators';
 })
 export class RegistrationPage implements OnInit {
 public name:any;
+  address: any;
+  email: any;
+  password:any;
+  city:any;
+  mobile:any;
+
   constructor(private webapiService: WebapiService,private router: Router,public loadingController:LoadingController: LoadingController,public alertController: AlertController) { }
   public notilist: any;
   ngOnInit(){
    
   }
 
-
-  abc(){
+  submit(){
     let data={
       "name":this.name,
-      "Password":this.name,
+      "Password":this.password,
+      "Email":this.email,
+      "Address":this.address,
+      "City":this.city,
+      "Mobile":this.mobile,
     }
   this.registration(data)  
   }
