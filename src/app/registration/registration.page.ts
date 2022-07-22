@@ -10,26 +10,55 @@ import {finalize} from 'rxjs/operators';
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
-
+public name:any;
   constructor(private webapiService: WebapiService,private router: Router,public loadingController:LoadingController: LoadingController,public alertController: AlertController) { }
   public notilist: any;
   ngOnInit(){
-    if(localStorage.getItem("data")===null||localStorage.getItem("data")===undefined)
-    {
-      this.router.navigate([' ']);
-      return;
-    }
-    let regis={
-      "Phone": localStorage.getItem("mobile"),
-      "code":1,
-    };
-    this.getRegistration(reg)
-    }
-    async
-
+   
   }
 
-  ngOnInit() {
+
+  abc(){
+    let data={
+      "name":this.name,
+      "Password":this.name,
+    }
+  this.registration(data)  
   }
 
-}
+  registration(data){
+    const loading =await  this.loadingController.create({
+      cssClass:"custom-alertDanger1",
+      message: 'Please Wait....',
+   
+    });
+    await loading.present();
+
+    this.webapiService.Registration(data).subscribe(res => {
+      console.log(res);
+      if (res.hasError==false){
+     
+      loading.dismiss();
+      //this.router.navigate(['dashboard']); 
+
+    
+    }else{
+      loading.dismiss();
+      console.log(res);
+
+      if(res.id==="0"){
+
+      }else{
+      this.router.navigate(['dashboard']);
+      }
+     // this.showAlert(res.errors[0].errorMessage );
+
+    }
+    }, error => {
+      console.log(error);
+      loading.dismiss();
+    });
+
+  }
+ 
+} 
