@@ -9,16 +9,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class WebapiService {
 
   constructor(private http: HttpClient) { }
-  urlmain:string  = 'http://Staging2.hpgamechanger.in/api/abc/';
+  urlmain:string  = 'http://staging2.hpgamechanger.in/api/abc/';
   httpHeader1 = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'
-    
-    ,'Access-Control-Allow-origin':'true'
-   
- })
+   ,'Access-Control-Allow-origin':'true'
+    })
   };
 
   Registration(data): Observable<any> {
+    debugger;
+    console.log(data);
     return this.http.post(this.urlmain+'Registration',data, this.httpHeader1)
       .pipe(
         catchError(this.handleError('Registration'))

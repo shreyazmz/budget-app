@@ -79,9 +79,9 @@ if(this.password===""){
         "Email":this.email,
         "Address":this.address,
         "City":this.city,
-        "Mobil":this.mobile,
+        "Mobil":this.mobile.toString()
       }
-   // this.registration(data)  
+    this.registration(data)  
     }
 
     validateEmail(email) {
@@ -98,13 +98,6 @@ if(this.password===""){
   
       this.webapiService.Registration(data).subscribe(res => {
         console.log(res);
-        if (res.hasError==false){
-       
-        loading.dismiss();
-        //this.router.navigate(['dashboard']); 
-  
-      
-      }else{
         loading.dismiss();
         console.log(res);
   
@@ -115,7 +108,7 @@ if(this.password===""){
         }
        // this.showAlert(res.errors[0].errorMessage );
   
-      }
+      
       }, error => {
         console.log(error);
         loading.dismiss();
